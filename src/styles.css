@@ -1,0 +1,267 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background-color: rgb(46, 103, 54);
+    background-image: linear-gradient(rgb(43, 110, 53), rgb(4, 11, 5) 85%);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#login-container {
+    display: flex;
+    display: flex;
+    height: 100vh;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    margin: 0 auto;
+    -ms-flex-pack: center;
+        justify-content: center;
+}
+
+#login-container .login {
+    background-color: rgba(0,0,0,.5);
+    color: #ffffff;
+    text-align: center;
+    padding: 70px;
+}
+
+#login-container .login .big-btn {
+    margin: 10px 0 20px 0;
+}
+
+#login-container .login p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.big-btn {
+    color: #fff;
+    background-color: #7c25f8;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 18px 48px 16px;
+    transition-property: background-color;
+    transition-duration: .3s;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    cursor: pointer;
+}
+
+.big-btn:hover {
+    background-color: #6207e3;
+}
+
+.small-btn {
+    color: #fff;
+    background-color: #2ebd59;
+    font-size: 14px;
+    line-height: 1;
+    height: 30px;
+    border-radius: 500px;
+    transition-property: background-color;
+    transition-duration: .3s;
+    border-width: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 7px 20px 6px;
+}
+
+.small-btn:hover {
+    background-color: #1ed760;
+}
+
+a.small-btn {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 30px;
+    padding: 0 20px;
+}
+
+#app-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: 100%;
+}
+
+#app-container #artistSection {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-align: center;
+        align-items: center;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+#app-container #artistSection .artistDesc .artistButtons{
+    margin-top: 10px;
+}
+
+#app-container #artistSection #profilePic {
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin-right: 50px;
+}
+
+#profilePic img {
+    height: 100%;
+}
+
+#app-container #topTrackSection {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex: 1;
+        flex: 1;
+    padding-top: 8px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#app-container #topTrackSection .tracksNotFoundMsg {
+    text-align: center;
+    background-color: #282828;
+    width: 100%;
+    padding: 50px 0;
+    color: #ffffff;
+}
+
+#topTrackSectionList {
+    overflow-y: scroll;
+    background-color: #282828;
+    border-bottom: 1px solid #404040;
+    height: 100%;
+}
+
+#topTrackSectionList li {
+    min-height: 50px;
+    background-color: #282828;
+    border-bottom: 1px solid #404040;
+    color: #ffffff;
+    padding: 5px 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    cursor: pointer;
+}
+#topTrackSection audio {
+    width: 100%;
+}
+
+#topTrackSectionList li:hover {
+    background-color: #181818;
+}
+
+#topTrackSectionList li .trackItem {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#topTrackSectionList li .trackNum {
+    margin-right: 20px;
+}
+
+#topTrackSectionList li .trackAlbum {
+    font-size: 11px;
+    color: #a0a0a0;
+    margin-top: 5px;
+}
+
+#app-container #relatedArtistSection {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    background-color: #282828;
+    min-height: 60px;
+    color: #ffffff;
+    -ms-flex-align: center;
+        align-items: center;
+    text-align: center;
+}
+
+#app-container #relatedArtistSection .artistNotFoundMsg {
+    margin: 0 auto;
+}
+
+#app-container #relatedArtistSection .artistItem {
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background-color: #181818;
+    color: #ffffff;
+}
+
+#app-container #relatedArtistSection .artistItem:hover {
+    transform: scale(1.2);
+}
+
+#app-container #relatedArtistSection .artistItem:hover .artistDesc {
+    max-width: 150px;
+    padding: 0 10px;
+}
+
+#app-container #relatedArtistSection .artistItem .artistDesc {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    padding: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width,padding 300ms linear;
+}
+
+#app-container #relatedArtistSection .artistPic {
+    height: 60px;
+}
+
+#app-container #relatedArtistSection .artistPic img{
+    height: 100%;
+}
