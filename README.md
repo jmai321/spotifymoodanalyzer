@@ -7,6 +7,6 @@
 * User-Friendly Interface: Clean and intuitive interface for a seamless user experience.
 
 ## Contributors
-* Ali Khaled: <a href="https://github.com/ali-khaled-949">@ali-khaled-949</a>
-* Kendrick Ngo: @kendrickngo2000
-* Jonathan Mai: @jmai321
+* Ali Khaled: [@alikhaled949](https://github.com/ali-khaled-949)
+* Kendrick Ngo: [@kendrickngo2000](https://github.com/kendrickngo2000)
+* Jonathan Mai: [@jmai321](https://github.com/jmai321)
