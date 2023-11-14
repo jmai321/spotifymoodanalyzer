@@ -36,7 +36,6 @@ function LoginPage() {
             <h1>Login</h1>
             <button id="login-button" className="big-btn">Log in with Spotify</button>
             <p className="login-desc">Connect your Spotify Account.</p>
-            <p className="login-desc-small">You will automatically be redirected to this page after login.</p>
           </div>
         </div>
       </div>
