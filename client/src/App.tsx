@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './styles.css'
-
+import { redirectToSpotifyAuthService } from './spotifyAuth';
 // function App() {
 //   return (
 //     <div className="App">
