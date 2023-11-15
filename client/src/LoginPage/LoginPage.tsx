@@ -6,7 +6,7 @@ const LoginPage: React.FC = () => {
   const REDIRECT_URI: string = 'http://localhost:3000/callback'; // Redirect URI
   const AUTH_ENDPOINT: string = 'https://accounts.spotify.com/authorize';
   const RESPONSE_TYPE: string = 'token';
-  const SCOPES: string = 'user-read-private'; // Add other scopes as needed
+  const SCOPES: string = 'user-read-private';
 
   const handleLogin = (): void => {
     window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`;

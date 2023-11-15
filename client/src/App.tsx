@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/callback" element={<CallbackPage />} />
-        <Route path="/user-profile" element={<ProfilePage />} />
+        <Route path="/profile-page" element={<ProfilePage />} />
       </Routes>
     </Router>
   );

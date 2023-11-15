@@ -11,7 +11,7 @@ const CallbackPage: React.FC = () => {
 
     if (token) {
       localStorage.setItem('spotifyAuthToken', token);
-      navigate('/user-profile'); // Navigate to user profile
+      navigate('/profile-page');
     }
   }, [location, navigate]);
 
