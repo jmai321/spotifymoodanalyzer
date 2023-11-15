@@ -1,12 +1,18 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './LoginPage/LoginPage';
+import CallbackPage from './LoginPage/CallbackPage';
+import ProfilePage from './ProfilePage/ProfilePage';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
-      <LoginPage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/callback" element={<CallbackPage />} />
+        <Route path="/user-profile" element={<ProfilePage />} />
+      </Routes>
+    </Router>
   );
 }
 
