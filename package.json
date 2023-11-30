@@ -1,0 +1,18 @@
+{
+  "name": "spotifymoodanalyzer",
+  "version": "1.0.0",
+  "description": "* Spotify Authentication: Users can log in with their Spotify accounts to grant access to their listening history.  \r * Retrieve Recently Listened Songs: Fetches the user's most recently listened to songs from Spotify's API.  \r * Analyze Mood Using Audio Valence: Utilizes Spotify's audio valence feature to determine the mood of each song.  \r * Graphical Representation: Displays the user's mood levels over a selected timeframe using interactive charts.  \r * User-Friendly Interface: Clean and intuitive interface for a seamless user experience.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

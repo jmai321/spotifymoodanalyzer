@@ -5,18 +5,13 @@ const ProfilePage: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
 
   useEffect(() => {
-    const token = localStorage.getItem('spotifyAuthToken');
-    if (token) {
-      axios.get('https://api.spotify.com/v1/me', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/user`, { withCredentials: true })
       .then(response => {
         setUserName(response.data.display_name);
       })
-      .catch(error => console.log(error));
-    }
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
   return (
