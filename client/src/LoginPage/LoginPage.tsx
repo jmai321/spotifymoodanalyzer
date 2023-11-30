@@ -3,7 +3,7 @@ import './styles.css';
 
 const LoginPage: React.FC = () => {
   const handleLogin = (): void => {
-    window.location.href = 'http://localhost:5000/login';
+    window.location.href = 'http://localhost:6000/login';
   };
 
   return (
