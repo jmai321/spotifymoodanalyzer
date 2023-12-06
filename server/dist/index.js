@@ -115,6 +115,14 @@ ormconfig_1.AppDataSource.initialize()
                     song.artist = item.track.artists.map((artist) => artist.name).join(', ');
                     song.valence = audioFeatures.valence;
                     song.playedAt = playedAtDate;
+                    // Fetch and save track image URL
+                    const trackDetailsResponse = await axios_1.default.get(`https://api.spotify.com/v1/tracks/${item.track.id}`, {
+                        headers: { 'Authorization': `Bearer ${req.session.token}` }
+                    });
+                    const trackDetails = trackDetailsResponse.data;
+                    if (trackDetails && trackDetails.album && trackDetails.album.images && trackDetails.album.images.length > 0) {
+                        song.trackImageUrl = trackDetails.album.images[0].url; // Use the first image as the track image
+                    }
                     await songRepository.save(song);
                 }
             }

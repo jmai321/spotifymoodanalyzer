@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import ValenceSongChart from './ValenceSongChart/ValenceSongChart';
 import axios from 'axios';
+import { Song } from '.././types';
+
 
 interface User {
     display_name: string;
-    // Add other user properties you might need
-}
-
-interface Song {
-    id: number;
-    spotifyTrackId: string;
-    name: string;
-    artist: string; 
-    valence: number;
-    playedAt: string;
 }
 
 const ProfilePage: React.FC = () => {
@@ -41,10 +34,6 @@ const ProfilePage: React.FC = () => {
             });
     };
 
-    const refreshSongs = () => {
-      setRecentlyPlayedSongs(null); // Set to null to show loading state
-      fetchAndSaveSongs();
-    };
 
     useEffect(() => {
         axios.get<User>(`${process.env.REACT_APP_BACKEND_URL}/user`, { withCredentials: true })
@@ -59,28 +48,7 @@ const ProfilePage: React.FC = () => {
 
     return (
         <div>
-            <p className="text-2xl mb-4">{userName ? `Welcome, ${userName}` : 'Loading user data...'}</p>
-            <div>
-                <h2 className="text-xl font-bold mb-2">Recently Played Songs:</h2>
-                <button onClick={refreshSongs}>Refresh Songs</button>
-                {recentlyPlayedSongs === null ? (
-                    <p>Loading songs...</p> // Loading message
-                ) : recentlyPlayedSongs.length > 0 ? (
-                    <ul>
-                        {recentlyPlayedSongs.map(song => (
-                            <li key={song.id}>
-                                <p>Song: {song.name}</p>
-                                <p>Artist: {song.artist}</p>
-                                <p>Valence: {song.valence}</p>
-                                <p>Played At: {new Date(song.playedAt).toLocaleString()}</p>
-                                <hr className="my-2" />
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>No recently played songs.</p>
-                )}
-            </div>
+            {recentlyPlayedSongs && <ValenceSongChart songs={recentlyPlayedSongs} />}
         </div>
     );
 }

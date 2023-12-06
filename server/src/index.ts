@@ -88,7 +88,7 @@ AppDataSource.initialize()
             if (!req.session.token) {
                 return res.status(401).json({ error: 'Unauthorized' });
             }
-          
+        
             try {
                 const recentlyPlayedResponse = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=50', {
                     headers: { 'Authorization': `Bearer ${req.session.token}` }
@@ -101,9 +101,9 @@ AppDataSource.initialize()
         
                     // Find existing song using exact date comparison
                     const existingSong = await songRepository.createQueryBuilder('song')
-                        .where("song.spotifyTrackId = :spotifyTrackId AND DATE(song.playedAt) = DATE(:playedAt)", { 
-                            spotifyTrackId: item.track.id, 
-                            playedAt: playedAtDate 
+                        .where("song.spotifyTrackId = :spotifyTrackId AND DATE(song.playedAt) = DATE(:playedAt)", {
+                            spotifyTrackId: item.track.id,
+                            playedAt: playedAtDate
                         })
                         .getOne();
         
@@ -123,7 +123,17 @@ AppDataSource.initialize()
                         song.name = item.track.name;
                         song.artist = item.track.artists.map((artist: { name: any; }) => artist.name).join(', ');
                         song.valence = audioFeatures.valence;
-                        song.playedAt = playedAtDate; 
+                        song.playedAt = playedAtDate;
+        
+                        // Fetch and save track image URL
+                        const trackDetailsResponse = await axios.get(`https://api.spotify.com/v1/tracks/${item.track.id}`, {
+                            headers: { 'Authorization': `Bearer ${req.session.token}` }
+                        });
+                        const trackDetails = trackDetailsResponse.data;
+                        if (trackDetails && trackDetails.album && trackDetails.album.images && trackDetails.album.images.length > 0) {
+                            song.trackImageUrl = trackDetails.album.images[0].url;
+                        }
+        
                         await songRepository.save(song);
                     }
                 }
@@ -132,9 +142,7 @@ AppDataSource.initialize()
                 console.error('Error fetching and saving songs:', error);
                 res.status(500).send('Failed to fetch and save songs.');
             }
-        });
-        
-        
+        }); 
 
         app.get('/songs', async (req: Request, res: Response) => {
             try {

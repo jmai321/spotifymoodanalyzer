@@ -9,14 +9,17 @@ export class Song {
     spotifyTrackId: string;
 
     @Column()
-    name: string; // Ensure this property is defined
+    name: string;
 
     @Column()
-    artist: string; // Ensure this property is defined
+    artist: string;
 
     @Column({ type: 'float' })
     valence: number;
 
     @Column({ type: 'timestamp' })
     playedAt: Date;
+
+    @Column()
+    trackImageUrl: string;
 }

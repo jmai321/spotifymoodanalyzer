@@ -38,6 +38,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'timestamp' }),
     __metadata("design:type", Date)
 ], Song.prototype, "playedAt", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Song.prototype, "trackImageUrl", void 0);
 exports.Song = Song = __decorate([
     (0, typeorm_1.Entity)()
 ], Song);
