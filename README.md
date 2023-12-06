@@ -2,7 +2,7 @@
 ## Features
 * Spotify Authentication: Users can log in with their Spotify accounts to grant access to their listening history.  
 * Retrieve Recently Listened Songs: Fetches the user's most recently listened to songs from Spotify's API.  
-* Analyze Mood Using Audio Valence: Utilizes Spotify's audio valence feature to determine the mood of each song.  
+* Display Data: Display various types of personalized data in an appealing way.
 * Graphical Representation: Displays the user's mood levels over a selected timeframe using interactive charts.  
 * User-Friendly Interface: Clean and intuitive interface for a seamless user experience.
 
