@@ -42,6 +42,26 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Song.prototype, "trackImageUrl", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], Song.prototype, "energy", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], Song.prototype, "acousticness", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], Song.prototype, "liveness", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], Song.prototype, "instrumentalness", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'float' }),
+    __metadata("design:type", Number)
+], Song.prototype, "danceability", void 0);
 exports.Song = Song = __decorate([
     (0, typeorm_1.Entity)()
 ], Song);

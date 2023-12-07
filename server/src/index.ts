@@ -124,6 +124,11 @@ AppDataSource.initialize()
                         song.artist = item.track.artists.map((artist: { name: any; }) => artist.name).join(', ');
                         song.valence = audioFeatures.valence;
                         song.playedAt = playedAtDate;
+                        song.energy = audioFeatures.energy;
+                        song.acousticness = audioFeatures.acousticness;
+                        song.liveness = audioFeatures.liveness;
+                        song.instrumentalness = audioFeatures.instrumentalness;
+                        song.danceability = audioFeatures.danceability;
         
                         // Fetch and save track image URL
                         const trackDetailsResponse = await axios.get(`https://api.spotify.com/v1/tracks/${item.track.id}`, {

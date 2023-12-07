@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { Song } from '../../types';
 
-const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
+const Danceability: React.FC<{ songs: Song[] }> = ({ songs }) => {
     const d3Container = useRef<SVGSVGElement | null>(null);
     const tooltipRef = useRef<HTMLDivElement | null>(null);
 
@@ -46,6 +46,7 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
                 .attr("stroke", "white")
                 .attr("font-size", "16px")
                 .text("Time");
+                
 
             // Add the y-axis and title
             svg.append('g')
@@ -57,7 +58,7 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
                 .attr("text-anchor", "bold")
                 .attr("stroke", "white")
                 .attr("font-size", "16px")
-                .text("Valence Score");
+                .text("Danceability Score");
 
             // Add the points
             svg.selectAll('.dot')
@@ -66,7 +67,7 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
                 .append('circle')
                 .attr('class', 'dot')
                 .attr('cx', d => x(d.playedAt))
-                .attr('cy', d => y(d.valence))
+                .attr('cy', d => y(d.danceability))
                 .attr('r', 5)
                 .attr('fill', 'yellow');
 
@@ -77,7 +78,7 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
                 .append('circle')
                 .attr('class', 'hitbox')
                 .attr('cx', d => x(d.playedAt))
-                .attr('cy', d => y(d.valence))
+                .attr('cy', d => y(d.danceability))
                 .attr('r', 10) // Larger radius for the hitbox
                 .attr('fill', 'transparent') // Make the hitbox circles invisible
                 .on('mouseover', (event, d) => {
@@ -90,7 +91,7 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
                             `<strong>Song:</strong> ${d.name}<br>` +
                             `<strong>Artist:</strong> ${d.artist}<br>` +
                             `<strong>Played At:</strong> ${d3.timeFormat("%B %d, %Y %H:%M")(d.playedAt)}<br>` +
-                            `<strong>Valence Score:</strong> ${d.valence}`;
+                            `<strong>Danceability Score:</strong> ${d.danceability}`;
                         tooltip.style.backgroundImage = `url(${d.trackImageUrl})`;
                         tooltip.style.backgroundSize = '100% 100%';
                         tooltip.style.backgroundRepeat = 'no-repeat';
@@ -129,4 +130,4 @@ const ValenceSongChart: React.FC<{ songs: Song[] }> = ({ songs }) => {
     );
 };
 
-export default ValenceSongChart;
+export default Danceability;

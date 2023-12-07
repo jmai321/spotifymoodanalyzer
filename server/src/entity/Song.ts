@@ -22,4 +22,20 @@ export class Song {
 
     @Column()
     trackImageUrl: string;
+
+    @Column({ type: 'float' })
+    energy: number;
+
+    @Column({ type: 'float' })
+    acousticness: number;
+
+    @Column({ type: 'float' })
+    liveness: number;
+
+    @Column({ type: 'float' })
+    instrumentalness: number;
+
+    @Column({ type: 'float' })
+    danceability: number;
+
 }

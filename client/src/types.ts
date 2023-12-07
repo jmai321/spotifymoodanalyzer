@@ -6,4 +6,9 @@ export interface Song {
     valence: number;
     playedAt: Date;
     trackImageUrl: string;
+    energy: number;
+    acousticness: number;
+    liveness: number;
+    instrumentalness: number;
+    danceability: number;
   }
