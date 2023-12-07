@@ -7,7 +7,8 @@
 * User-Friendly Interface: Clean and intuitive interface for a seamless user experience.
 * 
 <img width="820" alt="2" src="https://github.com/jmai321/spotifymoodanalyzer/assets/74437325/d11f34f0-59c3-446f-b751-a8a0c73814a3">
-<img width="888" alt="3" src="https://github.com/jmai321/spotifymoodanalyzer/assets/74437325/71ceaf2a-ae7e-4b13-9ff2-423b652552e7">
+<img width="888" alt="3" src="https://github.com/jmai321/spotifymoodanalyzer/assets/74437325/063224bb-8c4b-4b99-9135-018534f024af">
+
 
 
 
